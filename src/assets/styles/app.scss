@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  padding: 6px;
+  height: 40.8px;
+}
+
+button {
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.app_wrapper {
+  display: flex;
+  min-height: 100dvh;
+}
+
+main {
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 60px;
+  border-right: 1px solid;
+  text-align: center;
+}
+
+.external_site {
+  margin-top: auto;
+}
+
+.btn {
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.active {
+  text-decoration: underline;
+  color: #000;
+}
+
+.todo_list_wrapper {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .todo_input {
+    display: flex;
+    align-items: center;
+  }
+}
