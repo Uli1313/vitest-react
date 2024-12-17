@@ -18,13 +18,27 @@ function Header() {
       >
         Posts
       </NavLink>
-      <a
-        href="https://vitest.dev/"
-        target="_blank"
-        className="external_site btn"
-      >
-        外部網站
-      </a>
+      <div className="btn_group">
+        <a href="https://vitest.dev/" target="_blank" className="btn">
+          外部網站1
+        </a>
+        <button
+          className="btn"
+          onClick={() => {
+            window.location.href = 'https://vitest.dev/'
+          }}
+        >
+          外部網站2
+        </button>
+        <button
+          className="btn"
+          onClick={() => {
+            window.location.pathname = '/posts'
+          }}
+        >
+          內部網站
+        </button>
+      </div>
     </nav>
   )
 }
