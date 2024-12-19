@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router'
 
-function Header() {
+function Navbar() {
   return (
     <nav>
       <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
@@ -31,7 +31,7 @@ function Header() {
           外部網站2
         </button>
         <button
-          className="btn"
+          className="btn inner"
           onClick={() => {
             window.location.pathname = '/posts'
           }}
@@ -43,4 +43,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Navbar
