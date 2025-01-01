@@ -18,6 +18,12 @@ function Navbar() {
       >
         Posts
       </NavLink>
+      <NavLink
+        to="/xmas"
+        className={({ isActive }) => (isActive ? 'active' : '')}
+      >
+        XmasDay
+      </NavLink>
       <div className="btn_group">
         <a href="https://vitest.dev/" target="_blank" className="btn">
           外部網站1

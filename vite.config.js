@@ -12,11 +12,11 @@ export default defineConfig({
       include: ['src/**/*.{js,jsx}'],
       exclude: ['src/main.jsx'],
     },
-    onConsoleLog(log, type) {
-      console.log('log in test: ', log)
-      if (log === 'message from third party library' && type === 'stdout') {
-        return false
-      }
-    },
+    // onConsoleLog(log, type) {
+    //   console.log('log in test: ', log)
+    //   if (log === 'message from third party library' && type === 'stdout') {
+    //     return false
+    //   }
+    // },
   },
 })
