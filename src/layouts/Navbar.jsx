@@ -1,29 +1,25 @@
 import { NavLink } from 'react-router'
 
 function Navbar() {
+  const navList = [
+    { path: '/', name: 'Home' },
+    { path: '/todoList', name: 'TodoList' },
+    { path: '/posts', name: 'Posts' },
+    { path: '/xmas', name: 'XmasDay' },
+    { path: '/lifecycle', name: 'Lifecycle' },
+    { path: '/funcClass', name: 'Function/Class Component' },
+  ]
   return (
     <nav>
-      <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
-        Home
-      </NavLink>
-      <NavLink
-        to="/todoList"
-        className={({ isActive }) => (isActive ? 'active' : '')}
-      >
-        TodoList
-      </NavLink>
-      <NavLink
-        to="/posts"
-        className={({ isActive }) => (isActive ? 'active' : '')}
-      >
-        Posts
-      </NavLink>
-      <NavLink
-        to="/xmas"
-        className={({ isActive }) => (isActive ? 'active' : '')}
-      >
-        XmasDay
-      </NavLink>
+      {navList.map((nav) => (
+        <NavLink
+          key={nav.path}
+          to={nav.path}
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
+          {nav.name}
+        </NavLink>
+      ))}
       <div className="btn_group">
         <a href="https://vitest.dev/" target="_blank" className="btn">
           外部網站1
