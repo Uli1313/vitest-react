@@ -22,7 +22,7 @@ class ClassComponent extends React.Component {
   // }
 
   render() {
-    return <p>ClassComponent props: {this.props.message}</p>
+    return <span>{this.props.message}</span>
   }
 }
 

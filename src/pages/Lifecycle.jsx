@@ -22,7 +22,13 @@ function Lifecycle() {
       </button>
       <h2>當前 count: {count}</h2>
 
-      <button type="button" onClick={() => setIsShow(!isShow)}>
+      <button
+        type="button"
+        onClick={() => {
+          setIsShow(!isShow)
+          console.log('=======')
+        }}
+      >
         {isShow ? '隱藏子元件' : '顯示子元件'}
       </button>
       {isShow && <ChildComponent />}

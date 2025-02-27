@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 const FunctionComponent = ({ message }) => {
   useEffect(() => {
-    setTimeout(() => {
+    const timerId = setInterval(() => {
       console.log('FunctionComponent 非同步事件中的 props:', message)
     }, 3000)
+
+    return () => clearInterval(timerId)
   }, [])
 
-  return <p>FunctionComponent prop: {message}</p>
+  return <span>{message}</span>
 }
 
 export default FunctionComponent
