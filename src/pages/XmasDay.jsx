@@ -1,15 +1,23 @@
 function XmasDay() {
   const today = new Date()
-  const month = today.getMonth() + 1
-  const day = today.getDate()
+  const thisYear = today.getFullYear()
+  const christmas = new Date(thisYear, 11, 25)
+  const diffTime = christmas.getTime() - today.getTime()
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+  let message = ''
 
-  const isChristmas = month === 12 && day === 25
+  if (diffDays > 0) {
+    message = `離聖誕節還有 ${diffDays} 天`
+  } else if (diffDays === 0) {
+    message = '今天是聖誕節'
+  } else {
+    message = '今年聖誕節過了'
+  }
 
   return (
     <div className="xmas_day_wrapper">
       <h1>Xmas Day</h1>
-      <p>現在日期 : {today.toLocaleDateString()}</p>
-      <p>{isChristmas ? '今天是聖誕節' : '今天不是聖誕節'}</p>
+      <p>{message}</p>
     </div>
   )
 }

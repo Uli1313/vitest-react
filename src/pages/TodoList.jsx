@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import NoTodos from '../components/NoTodos'
+import TodoItem from '../components/TodoItem'
 
 function TodoList() {
   const [todos, setTodos] = useState([])
@@ -6,7 +8,10 @@ function TodoList() {
 
   const addTodo = (inputValue) => {
     if (!inputValue.trim()) return
-    const _todos = [...todos, { id: Date.now(), text: inputValue }]
+    const _todos = [
+      ...todos,
+      { id: Date.now(), text: inputValue, createDate: new Date() },
+    ]
     setTodos(_todos)
     setInputValue('')
   }
@@ -27,17 +32,24 @@ function TodoList() {
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button className="btn" onClick={() => addTodo(inputValue)}>
-          加入
+          新增
         </button>
       </div>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>
-            {todo.text}{' '}
-            <button onClick={() => deleteTodo(todo.id)}>刪除</button>
-          </li>
-        ))}
-      </ul>
+      {todos.length === 0 ? (
+        <NoTodos />
+      ) : (
+        <ul>
+          {todos.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              id={todo.id}
+              text={todo.text}
+              createDate={todo.createDate}
+              deleteTodo={deleteTodo}
+            />
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
