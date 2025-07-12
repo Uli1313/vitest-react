@@ -1,5 +1,15 @@
-import CounterContainer from '../containers/CounterContainer'
-
 export default function Home() {
-  return <CounterContainer />
+  return (
+    <div>
+      <button type="button" onClick={() => alert('Button A clicked!')}>
+        Click
+      </button>
+      <button type="button" onClick={() => alert('Button B clicked!')}>
+        Click
+      </button>
+      <button type="button">Click</button>
+      <button type="button">Click</button>
+      <button type="button">Click</button>
+    </div>
+  )
 }
