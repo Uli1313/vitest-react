@@ -1,5 +1,5 @@
-import CounterContainer from '../containers/CounterContainer'
+import { getGreeting } from '../logic/getGreeting'
 
 export default function Home() {
-  return <CounterContainer />
+  return <div>{getGreeting()}</div>
 }
