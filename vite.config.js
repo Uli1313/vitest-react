@@ -12,6 +12,6 @@ export default defineConfig({
       include: ['src/**/*.{js,jsx}'],
       exclude: ['src/main.jsx'],
     },
-    setupFiles: './tests/setup.js',
+    setupFiles: './setup.js',
   },
 })
